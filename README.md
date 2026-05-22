@@ -35,7 +35,8 @@ An IRFZ44N N-Channel MOSFET acts as our heavy-duty electronic switch. Pin 3 of t
 
 Crucially, D3 (1N4001) is placed across the motor as a Flyback Diode. When the MOSFET suddenly switches off, the inductive magnetic field inside the motor collapses, causing a massive voltage spike. D3 safely recirculates this current, saving the MOSFET from getting fried.
 
-📊 Verified Simulation Waveforms
+Verified Simulation Waveforms:
+
 When you run the simulation (.tran 50m), you get beautiful proof that the motor is running:
 
 V(n007) (Green) - Pin 3 Output: A perfect 0V to 12V square wave commanding the circuit.
@@ -44,7 +45,7 @@ V(n005) (Blue) - MOSFET Drain: Shows the switching voltages along with high-freq
 
 I(L1) (Red) - Motor Current: The ultimate proof of spinning. It forms a perfect sawtooth wave. Current ramps up smoothly when the pulse is high, and coasts down when the pulse is low. Because the current never hits zero, the motor runs continuously and smoothly!
 
-🛠️ Lessons Learned & Debugging Notes (The Hard Way)
+Lessons Learned & Debugging Notes:
 Simulators are unforgiving! During development, I hit a few classic electronic simulation hurdles that are worth noting if you are trying to reproduce this:
 
 Watch Your Node Crossings: In LTspice, wires crossing over each other do not connect automatically. Pins 2 and 6 must explicitly share a blue junction dot with the top of Capacitor C1. Conversely, ensure Pin 7 only touches the diode/pot junction and doesn't accidentally bridge into the capacitor line, or it will short out the timing cycle completely.
