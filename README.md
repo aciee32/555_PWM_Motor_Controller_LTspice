@@ -1,4 +1,5 @@
 555 Timer PWM Motor Controller (LTspice Simulation)
+
 Hey there! This project is a fully functional Pulse Width Modulation (PWM) DC motor controller designed around the classic NE555 timer and simulated in LTspice.
 
 I built this to demonstrate how to efficiently control the speed of a DC motor without wasting power as heat (which is what happens if you just use a standard variable linear resistor).
